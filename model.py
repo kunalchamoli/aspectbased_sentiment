@@ -7,7 +7,7 @@ from absl import app, flags, logging
 from torch.utils.data import Dataset, DataLoader, random_split
 from dataset import trainset, valset, testset
 
-flags.DEFINE_boolean('debug', False, '')
+flags.DEFINE_boolean('debug', True, '')
 flags.DEFINE_string('device', 'cpu', '')
 flags.DEFINE_string('modelname', 'bert-base_uncased', '')
 flags.DEFINE_integer('batch_size', 16, '')
@@ -81,6 +81,6 @@ def main(_):
     trainer.fit(model)
 
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         app.run(main)
     
